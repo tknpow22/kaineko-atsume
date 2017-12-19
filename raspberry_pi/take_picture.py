@@ -21,6 +21,10 @@ import picamera
 # 画像ファイルのアップロード先
 IMG_UPLOAD_URL = 'http://192.168.1.4:8080/upload'
 
+# カメラで撮影するかどうかのしきい値
+# 要調整: 明るいと値が小さくなり、暗いと大きくなる
+PVALUE_THRESHOLD = 850
+
 # 赤外線センサモジュールから状態を取得する
 class Pir:
     def __init__(self):
@@ -59,8 +63,7 @@ class Daylight:
         pvalue = self.read_pvalue()
         ##print('enough(): pvalue: [%d]' % (pvalue))
 
-        # 要調整: 明るいと値が小さくなり、暗いと大きくなる
-        if pvalue < 850:
+        if pvalue < PVALUE_THRESHOLD:
             return True
 
         return False
