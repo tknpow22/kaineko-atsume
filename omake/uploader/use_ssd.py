@@ -81,7 +81,7 @@ class UseSSD:
 
 
             acc = top_conf[i] * 100 // 10 * 10
-            dir_name = '%s/%s/%02d_%02d/' % (save_dirpath, label_name, acc, acc + 10)
+            dir_name = '%s/%s/%02d_%02d' % (save_dirpath, label_name, acc, acc + 10)
             os.makedirs(dir_name, exist_ok=True)
 
             target_img_array = img_orig_array[ymin:ymax, xmin:xmax]
