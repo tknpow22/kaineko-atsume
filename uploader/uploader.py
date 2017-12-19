@@ -13,8 +13,6 @@ def do_upload():
 
     filepath = 'files/' + upload.filename
 
-    print(upload)
-
     upload.save(filepath)
 
     return 'success'
