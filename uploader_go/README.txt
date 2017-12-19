@@ -3,9 +3,9 @@
 
 # アドレス・ポート
 
-    uploader.py の
+    uploader.go の
 
-        run(host='0.0.0.0', port=8080, debug=True, reloader=False)
+        http.ListenAndServe("0.0.0.0:8080", nil)
 
     を必要であれば、環境にあわせて変更します。
 
@@ -13,5 +13,5 @@
 
 # CUI から以下のコマンドで起動します。
 
-    python3 uploader.py
+    go run uploader.go
 
