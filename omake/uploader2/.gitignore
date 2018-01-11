@@ -1,0 +1,12 @@
+# Pydev
+.project
+.pydevproject
+
+# https://github.com/rykov8/ssd_keras
+/ssd.py
+/ssd_layers.py
+/ssd_utils.py
+
+# https://mega.nz/#F!7RowVLCL!q3cEVRK9jyOSB9el3SssIA
+/weights_SSD300.hdf5
+
