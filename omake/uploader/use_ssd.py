@@ -25,7 +25,7 @@ class UseSSD:
     def normalize(self, img_array):
         return (img_array - np.mean(img_array)) / np.std(img_array) * 16 + 64
 
-    def process_img(self, img_filepath, accuracy, save_dirpath):
+    def process_img(self, img_filepath, confidence, save_dirpath):
 
         # オリジナル
         with load_img(img_filepath) as img_orig:
@@ -55,7 +55,7 @@ class UseSSD:
         det_xmax = results[0][:, 4]
         det_ymax = results[0][:, 5]
 
-        top_indices = [i for i, conf in enumerate(det_conf) if conf >= accuracy]
+        top_indices = [i for i, conf in enumerate(det_conf) if conf >= confidence]
 
         top_conf = det_conf[top_indices]
 
